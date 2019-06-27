@@ -1,0 +1,34 @@
+@import '../../../styles/mixins';
+
+.root {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  background-color: gray;
+  height: 2px;
+  width: 100vw;
+  right: 100%;
+  top: 50%;
+
+  @include media(xs) {
+    margin-right: 16px;
+  }
+
+  @include media(sm) {
+    margin-right: 24px;
+  }
+
+  @include media(md) {
+    margin-right: 32px;
+  }
+
+  @include media(lg) {
+    margin-right: 40px;
+  }
+
+  @include media(xl) {
+    margin-right: 48px;
+  }
+}
