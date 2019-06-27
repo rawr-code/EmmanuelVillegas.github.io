@@ -69,7 +69,6 @@
 }
 
 .imgAbout {
-  width: 300px;
   border-radius: 8px;
 
   @include media(xs) {
@@ -81,6 +80,14 @@
   }
 
   @include media(md) {
+    width: 400px;
+  }
+
+  @include media(lg) {
+    width: 400px;
+  }
+
+  @include media(xl) {
     width: 400px;
   }
 }
