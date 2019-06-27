@@ -1,0 +1,77 @@
+@import '../../styles/mixins';
+
+.root {
+  min-width: 350px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 200;
+
+  @include media(xs) {
+    font-size: 1.5em;
+    // display: none;
+  }
+
+  @include media(sm) {
+    font-size: 32px;
+  }
+
+  @include media(md) {
+    font-size: 40px;
+  }
+
+  @include media(lg) {
+    font-size: 40px;
+  }
+}
+
+.tag {
+  font-weight: 700;
+
+  @include media(xs) {
+    font-size: 3.125em;
+  }
+
+  @include media(sm) {
+    font-size: 5.125em;
+    margin-left: 32px;
+  }
+
+  @include media(md) {
+    font-size: 6.125em;
+    margin-left: 64px;
+  }
+
+  @include media(lg) {
+    font-size: 6.125em;
+    margin-left: 64px;
+  }
+}
+
+.info {
+  font-weight: 300;
+
+  @include media(xs) {
+    font-size: 18px;
+  }
+
+  @include media(sm) {
+    font-size: 20px;
+  }
+
+  @include media(md) {
+    font-size: 32px;
+  }
+
+  @include media(lg) {
+    font-size: 32px;
+  }
+}
+
+.infoBold {
+  font-weight: 700;
+}
