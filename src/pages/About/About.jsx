@@ -21,23 +21,28 @@ const About = () => {
           </div>
 
           <div className={styles.info}>
-            Soy <strong>Desarrollador web junior</strong>, me gusta crear
-            aplicaciones y más aun cuando debo usar tecnologías como{' '}
-            <strong>ReactJs</strong> y <strong>Sass</strong>.
+            Soy <strong>Desarrollador Web Junior</strong>, en constante
+            aprendizaje.
           </div>
 
           <div className={styles.info}>
-            <b>Venezolano</b> de nacimiento, Técnico Superior en Informática y
-            futuro Ingeniero.
+            Me gusta crear aplicaciones y aun más cuando debo usar tecnologías
+            como <strong>ReactJs</strong> y <strong>Sass</strong>.
+          </div>
+
+          <div className={styles.info}>
+            Soy <b>Venezolano</b> de nacimiento, Técnico Superior en Informática
+            y futuro Ingeniero.
           </div>
 
           <div className={styles.info}>
             Me apasiona el modelado 3D, <strong>el diseño de interfaces</strong>{' '}
-            y la creación de video juegos. Aunque de este ultimo se muy poco.
+            y la creación de vídeo juegos. Aunque de este ultimo conozco muy
+            poco.
           </div>
 
           <div className={styles.info}>
-            Cuento con <strong>conocimientos</strong> en las siguientes
+            Y Cuento con <strong>conocimientos</strong> en las siguientes
             tecnologías:
           </div>
           <div className={styles.info}>
