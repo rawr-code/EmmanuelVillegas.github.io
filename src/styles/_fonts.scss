@@ -1,0 +1,12 @@
+@import './mixins';
+
+@include font-face('Gilroy', './fonts/Gilroy-Thin', 100);
+@include font-face('Gilroy', './fonts/Gilroy-UltraLight', 200);
+@include font-face('Gilroy', './fonts/Gilroy-Light', 300);
+@include font-face('Gilroy', './fonts/Gilroy-Regular', 400);
+@include font-face('Gilroy', './fonts/Gilroy-Medium', 500);
+@include font-face('Gilroy', './fonts/Gilroy-SemiBold', 600);
+@include font-face('Gilroy', './fonts/Gilroy-Bold', 700);
+@include font-face('Gilroy', './fonts/Gilroy-ExtraBold', 800);
+@include font-face('Gilroy', './fonts/Gilroy-Black', 900);
+// @include font-face('Gilroy', './fonts/Gilroy-Heavy', heavy);
