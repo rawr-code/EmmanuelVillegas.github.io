@@ -29,6 +29,6 @@
 			"@Utils": ["src/utils/index.ts"]
 		}
 	},
-	"exclude": ["node_modules"],
-	"include": ["**/*.ts", "**/*.tsx"]
+	"exclude": ["node_modules", ".next", ".vscode", ".config"],
+	"include": ["src/**/*.ts", "src/**/*.tsx"]
 }
