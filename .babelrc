@@ -1,0 +1,21 @@
+{
+	"presets": [["next/babel"]],
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["./"],
+				"alias": {
+					"@Layout": ["./src/layout/index.ts"],
+					"@Atoms": ["./src/components/Atoms/index.ts"],
+					"@Molecules": ["./src/components/Molecules/index.ts"],
+					"@Organisms": ["./src/components/Organisms/index.ts"],
+					"@API": ["./src/api/*"],
+					"@Store": ["./src/store/index.ts"],
+					"@Modules/*": ["./src/store/modules/*"],
+					"@Utils": ["./src/utils/index.ts"]
+				}
+			}
+		]
+	]
+}
