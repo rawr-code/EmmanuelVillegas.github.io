@@ -1,7 +1,6 @@
+import { Layout } from '@Layout';
 import Link from 'next/link';
 import styled from 'styled-components';
-
-import Layout from '../components/Layout';
 
 const Title = styled.h1`
 	font-size: 50px;
@@ -9,9 +8,9 @@ const Title = styled.h1`
 `;
 
 const IndexPage = (): React.ReactElement => (
-	<Layout title="Home | Next.js + TypeScript Example">
+	<Layout title="Home | Emmanuel Villegas">
 		<h1>
-			Hello Next.js{' '}
+			Hello Next.js a
 			<span role="img" aria-label="emoji">
 				👋
 			</span>
