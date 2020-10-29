@@ -1,22 +1,22 @@
+import { GlobalStyles, theme } from '@Theme';
 // Next
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 // Styled Components
 import { ThemeProvider } from 'styled-components';
 
-const theme = {
-	colors: {
-		primary: '#0070f3'
-	}
-};
-
 const MainApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
 	return (
 		<>
 			<Head>
-				<title>Tauros.io</title>
+				<title>Emmanuel Villegas Gonzalez</title>
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
 			</Head>
 			<ThemeProvider theme={theme}>
+				<GlobalStyles />
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</>
