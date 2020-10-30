@@ -1,18 +1,26 @@
 import { DefaultTheme } from 'styled-components';
 
+import createBreakpoints from './createBreakpoints';
+
 const theme: DefaultTheme = {
-	breakpoints: {
-		xs: 0,
-		sm: 576,
-		md: 768,
-		lg: 992,
-		xl: 1200
-	},
+	breakpoints: createBreakpoints(),
 	palette: {
+		background: {
+			paper: '#fff',
+			default: '#212529'
+		},
 		primary: {
-			main: '#0070f3',
-			light: '#0070f3',
-			dark: '#0070f3'
+			main: '#007bff',
+			light: '#007bff',
+			dark: '#007bff',
+			contrastText: '#fff'
+		},
+		text: {
+			primary: 'rgba(0, 0, 0, 0.87)',
+			secondary: 'rgba(0, 0, 0, 0.54)',
+			disabled: 'rgba(0, 0, 0, 0.38)',
+			hint: 'rgba(0, 0, 0, 0.38)',
+			divider: 'rgba(0, 0, 0, 0.12)'
 		}
 	}
 };
