@@ -1,7 +1,7 @@
+import { Layout } from '@Layout';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { User } from '../../../interfaces';
-import Layout from '../../components/Layout';
 import ListDetail from '../../components/ListDetail';
 import { sampleUserData } from '../../utils/sample-data';
 

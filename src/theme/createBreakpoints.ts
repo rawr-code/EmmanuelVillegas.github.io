@@ -11,11 +11,11 @@ const breakpointsDefaultConfig = {
 	},
 	unit: 'px',
 	step: 5,
-	up: (key: MediaQueries) => '',
-	down: (key: MediaQueries) => '',
-	between: (start: MediaQueries, end: MediaQueries) => '',
-	only: (key: MediaQueries) => '',
-	width: (width: number) => ''
+	up: (key: MediaQueries) => `${key}`,
+	down: (key: MediaQueries) => `${key}`,
+	between: (start: MediaQueries, end: MediaQueries) => `${start}${end}`,
+	only: (key: MediaQueries) => `${key}`,
+	width: (width: number) => `${width}`
 };
 
 export type Breakpoints = typeof breakpointsDefaultConfig;
