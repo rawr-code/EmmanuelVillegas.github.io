@@ -5,6 +5,9 @@ import { Breakpoints } from './createBreakpoints';
 
 // and extend them!
 
+interface IDrawer {
+	width: string;
+}
 interface IBackground {
 	paper: string;
 	default: string;
@@ -27,10 +30,12 @@ interface ITextColors {
 
 declare module 'styled-components' {
 	export interface DefaultTheme {
+		drawer: IDrawer;
 		breakpoints: Breakpoints;
 		palette: {
 			background: IBackground;
 			primary: IPalette;
+			secondary: IPalette;
 			text: ITextColors;
 		};
 	}

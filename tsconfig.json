@@ -26,7 +26,8 @@
 			"@API": ["src/api/*"],
 			"@Store": ["src/store/index.ts"],
 			"@Modules/*": ["src/store/modules/*"],
-			"@Utils": ["src/utils/index.ts"]
+			"@Utils": ["src/utils/index.ts"],
+			"@Theme": ["src/theme/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", ".next", ".vscode", ".config"],

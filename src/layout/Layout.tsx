@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import { Footer, Header, MainContainer } from '.';
 
-const LayoutWrapper = styled.div``;
+const LayoutWrapper = styled.div`
+	${({ theme }) => theme.breakpoints.up('lg')} {
+		margin-left: ${({ theme }) => theme.drawer.width};
+	}
+`;
 
 interface Props {
 	children: React.ReactNode;
