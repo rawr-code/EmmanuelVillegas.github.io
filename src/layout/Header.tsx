@@ -168,13 +168,13 @@ const socialLinks = [
 		icon: FaInstagram
 	},
 	{
-		title: 'Linkedin',
+		title: 'LinkedIn',
 		color: '#00ACEE',
 		url: 'https://www.linkedin.com/in/emmanuel-villegas/',
 		icon: FaLinkedinIn
 	},
 	{
-		title: 'Github',
+		title: 'GitHub',
 		color: '#333333',
 		url: 'https://github.com/Amenoth',
 		icon: FaGithubAlt
