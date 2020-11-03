@@ -3,8 +3,6 @@ import styled from 'styled-components';
 const TooltipWrapper = styled.span`
 	display: inline-block;
 	position: relative;
-	border-bottom: 1px dashed #000;
-
 	width: 100%;
 	height: 100%;
 
