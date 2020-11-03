@@ -22,8 +22,8 @@ const TooltipWrapper = styled.span`
 		left: 50%;
 		transform: translateX(-50%);
 
-		font-size: 14px;
-		padding: 4px 8px;
+		font-size: 12px;
+		padding: 2px 8px;
 		border-radius: 4px;
 		background: #000;
 		color: #fff;
