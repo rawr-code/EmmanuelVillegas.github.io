@@ -1,3 +1,4 @@
+import { Tooltip } from '@Atoms';
 import {
 	FaFacebookF,
 	FaGithubAlt,
@@ -167,7 +168,7 @@ const socialLinks = [
 		icon: FaInstagram
 	},
 	{
-		title: 'LinkedinIn',
+		title: 'Linkedin',
 		color: '#00ACEE',
 		url: 'https://www.linkedin.com/in/emmanuel-villegas/',
 		icon: FaLinkedinIn
@@ -226,7 +227,9 @@ const Header: React.FC = (): React.ReactElement => {
 										href={item.url}
 										target="_blank"
 										color={item.color}>
-										<Icon />
+										<Tooltip text={item.title}>
+											<Icon />
+										</Tooltip>
 									</SocialLink>
 								</SocialIcon>
 							);
