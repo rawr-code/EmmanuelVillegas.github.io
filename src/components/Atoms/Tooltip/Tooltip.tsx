@@ -8,46 +8,48 @@ const TooltipWrapper = styled.span`
 	align-items: center;
 	justify-content: center;
 
-	&:hover {
-		&::before,
-		::after {
-			display: block;
-			opacity: 1;
+	${({ theme }) => theme.breakpoints.up('lg')} {
+		&:hover {
+			&::before,
+			::after {
+				display: block;
+				opacity: 1;
+			}
 		}
-	}
 
-	&::before {
-		content: attr(data-text);
-		position: absolute;
-		z-index: 1;
+		&::before {
+			content: attr(data-text);
+			position: absolute;
+			z-index: 1;
 
-		bottom: 125%;
-		left: 50%;
-		transform: translateX(-50%);
+			bottom: 125%;
+			left: 50%;
+			transform: translateX(-50%);
 
-		font-size: 12px;
-		padding: 2px 8px;
-		border-radius: 4px;
-		background: #000;
-		color: #fff;
-		text-align: center;
+			font-size: 12px;
+			padding: 2px 8px;
+			border-radius: 4px;
+			background: #000;
+			color: #fff;
+			text-align: center;
 
-		display: none;
+			display: none;
 
-		opacity: 0;
-		transition: 0.3s opacity;
-	}
+			opacity: 0;
+			transition: 0.3s opacity;
+		}
 
-	&::after {
-		content: ' ';
-		position: absolute;
-		top: -25%;
-		left: 50%;
-		margin-left: -5px;
-		border-width: 5px;
-		border-style: solid;
-		border-color: black transparent transparent transparent;
-		display: none;
+		&::after {
+			content: ' ';
+			position: absolute;
+			top: -25%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: black transparent transparent transparent;
+			display: none;
+		}
 	}
 `;
 
