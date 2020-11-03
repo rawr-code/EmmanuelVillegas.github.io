@@ -5,6 +5,9 @@ const TooltipWrapper = styled.span`
 	position: relative;
 	border-bottom: 1px dashed #000;
 
+	width: 100%;
+	height: 100%;
+
 	&:hover {
 		&::before,
 		::after {
