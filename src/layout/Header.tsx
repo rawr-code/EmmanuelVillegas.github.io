@@ -326,7 +326,10 @@ const Header: React.FC = (): React.ReactElement => {
 				<Menu>
 					<Avatar>
 						<span>
-							<img src="/images/logo.jpg" alt="logo" />
+							<img
+								src={require('images/logo.jpg?inline')}
+								alt="logo"
+							/>
 						</span>
 						<h1>Emmanuel Villegas</h1>
 					</Avatar>
