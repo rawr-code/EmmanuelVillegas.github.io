@@ -11,6 +11,10 @@ const MainApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
 			<Head>
 				<title>Emmanuel Villegas Gonzalez</title>
 				<meta
+					name="theme-color"
+					content={theme.palette.secondary.main}
+				/>
+				<meta
 					name="viewport"
 					content="initial-scale=1.0, width=device-width"
 				/>
