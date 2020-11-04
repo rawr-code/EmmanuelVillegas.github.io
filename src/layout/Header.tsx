@@ -1,15 +1,23 @@
 import { Tooltip } from '@Atoms';
+import { useState } from 'react';
 import {
 	FaFacebookF,
 	FaGithubAlt,
 	FaInstagram,
 	FaLinkedinIn
 } from 'react-icons/fa';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface MenuButtonProps {
+	isOpen: boolean;
+}
 
 const HeaderWrapper = styled.header`
 	position: sticky;
 	top: 0;
+	z-index: 1020;
+
+	transition: all 0.5s ease;
 `;
 
 const Navigation = styled.nav`
@@ -31,28 +39,35 @@ const Navigation = styled.nav`
 	z-index: 2;
 	overflow: hidden;
 	overflow-y: auto;
+
+	${({ theme }) => theme.breakpoints.down('lg')} {
+		position: initial;
+		width: 100%;
+		height: auto;
+		overflow: visible;
+	}
 `;
 
 const Menu = styled.div`
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	flex-basis: auto;
-	padding: 1rem 1rem 0.5rem;
+	padding-left: 1rem;
 	height: 100%;
 
 	${({ theme }) => theme.breakpoints.up('lg')} {
+		flex-direction: column;
 		flex-wrap: nowrap;
+		padding: 1rem 1rem 0.5rem;
 	}
 `;
 
 const Avatar = styled.a`
 	text-align: center;
-	margin-top: 1.5rem;
 
 	& > span {
-		display: inline-block;
+		display: none;
 		padding: 0.5rem;
 		border-radius: 50rem;
 
@@ -65,6 +80,7 @@ const Avatar = styled.a`
 		}
 
 		${({ theme }) => theme.breakpoints.up('lg')} {
+			display: inline-block;
 			margin-bottom: 0.25rem;
 		}
 	}
@@ -74,10 +90,18 @@ const Avatar = styled.a`
 		font-size: 1.3125rem;
 		color: #fff;
 		text-align: center;
+
+		${({ theme }) => theme.breakpoints.down('lg')} {
+			font-size: 15px;
+		}
+	}
+
+	${({ theme }) => theme.breakpoints.up('lg')} {
+		margin-top: 1.5rem;
 	}
 `;
 
-const MenuContent = styled.div`
+const MenuContent = styled.div<MenuButtonProps>`
 	width: 100%;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -85,6 +109,27 @@ const MenuContent = styled.div`
 	${({ theme }) => theme.breakpoints.up('lg')} {
 		display: flex;
 		flex-basis: auto;
+	}
+
+	${({ theme }) => theme.breakpoints.down('lg')} {
+		position: absolute;
+		top: 99%;
+		right: 0;
+		left: 0;
+		margin-top: 0px;
+		z-index: 1000;
+		background: rgba(0, 0, 0, 0.95);
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height 0.5s ease;
+
+		${(props) =>
+			props.isOpen &&
+			css`
+				max-height: 100vh;
+			`}
 	}
 `;
 
@@ -96,12 +141,24 @@ const MenuList = styled.ul`
 	flex-direction: column;
 	width: 100%;
 	text-align: center;
+
+	${({ theme }) => theme.breakpoints.down('lg')} {
+		overflow: hidden;
+		overflow-y: auto;
+		max-height: 65vh;
+		padding: 15px;
+		text-align: left;
+	}
 `;
 
 const MenuListItem = styled.li`
 	height: 100%;
 	display: block;
 	box-sizing: border-box;
+
+	${({ theme }) => theme.breakpoints.down('lg')} {
+		border-bottom: 1px solid rgba(250, 250, 250, 0.15);
+	}
 `;
 
 const MenuListItemLink = styled.a`
@@ -111,12 +168,16 @@ const MenuListItemLink = styled.a`
 	position: relative;
 	display: block;
 	height: auto;
-	padding: 10px 0;
+	padding: 8px 0;
 	cursor: pointer;
 
 	&:hover {
 		color: ${({ theme }) => theme.palette.primary.main};
 		transition: all 0.2s ease;
+	}
+
+	${({ theme }) => theme.breakpoints.up('lg')} {
+		padding: 10px 0;
 	}
 `;
 
@@ -127,6 +188,10 @@ const SocialIconsList = styled.ul`
 	flex-wrap: wrap;
 	list-style: none;
 	margin-bottom: -0.25rem !important;
+
+	${({ theme }) => theme.breakpoints.down('lg')} {
+		margin-left: auto;
+	}
 `;
 
 const SocialIcon = styled.li`
@@ -152,6 +217,75 @@ const SocialLink = styled.a`
 	&:hover {
 		color: ${(props) => props.color};
 	}
+
+	${({ theme }) => theme.breakpoints.up('lg')} {
+		width: 26px;
+		height: 26px;
+		line-height: 26px;
+	}
+`;
+
+const MenuButton = styled.button<MenuButtonProps>`
+	display: none;
+	font-size: 1.25rem;
+	line-height: 1;
+	background-color: transparent;
+	width: 25px;
+	height: 30px;
+	padding: 10px;
+	margin: 18px 15px;
+	position: relative;
+	border: none;
+	transform: rotate(0deg);
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+
+	& > span {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		border-radius: 2px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: 0.25s ease-in-out;
+		transform-origin: left center;
+		background-color: #fff;
+	}
+
+	& > span:nth-child(1) {
+		top: 7px;
+	}
+	& > span:nth-child(2) {
+		top: 14px;
+	}
+	& > span:nth-child(3) {
+		top: 21px;
+	}
+
+	${({ theme }) => theme.breakpoints.down('lg')} {
+		display: block;
+	}
+
+	${(props) =>
+		props.isOpen &&
+		css`
+			& > span:nth-child(1) {
+				top: 3px;
+				left: 3px;
+				transform: rotate(45deg);
+			}
+			& > span:nth-child(2) {
+				width: 0%;
+				opacity: 0;
+			}
+			& > span:nth-child(3) {
+				top: 21px;
+				left: 3px;
+				transform: rotate(-45deg);
+			}
+		`}
 `;
 
 const socialLinks = [
@@ -164,7 +298,7 @@ const socialLinks = [
 	{
 		title: 'Instagram',
 		color: '#ea4c89',
-		url: 'https://www.facebook.com/emmanuel.villegasgonzalez.98/',
+		url: 'https://www.instagram.com/emmanuelvillegasgonzalez/',
 		icon: FaInstagram
 	},
 	{
@@ -182,6 +316,10 @@ const socialLinks = [
 ];
 
 const Header: React.FC = (): React.ReactElement => {
+	const [showMenu, setShowMenu] = useState(false);
+
+	const handleOpenMenu = () => setShowMenu((prev) => !prev);
+
 	return (
 		<HeaderWrapper>
 			<Navigation>
@@ -192,7 +330,7 @@ const Header: React.FC = (): React.ReactElement => {
 						</span>
 						<h1>Emmanuel Villegas</h1>
 					</Avatar>
-					<MenuContent>
+					<MenuContent isOpen={showMenu}>
 						<MenuList>
 							<MenuListItem>
 								<MenuListItemLink>Home</MenuListItemLink>
@@ -235,6 +373,11 @@ const Header: React.FC = (): React.ReactElement => {
 							);
 						})}
 					</SocialIconsList>
+					<MenuButton isOpen={showMenu} onClick={handleOpenMenu}>
+						<span />
+						<span />
+						<span />
+					</MenuButton>
 				</Menu>
 			</Navigation>
 		</HeaderWrapper>
