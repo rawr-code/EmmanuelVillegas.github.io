@@ -13,13 +13,13 @@ const theme: DefaultTheme = {
 			default: '#212529'
 		},
 		primary: {
-			main: '#007bff',
-			light: '#007bff',
-			dark: '#007bff',
+			main: '#5DDBD3',
+			light: '#5DDBD3',
+			dark: '#5DDBD3',
 			contrastText: '#fff'
 		},
 		secondary: {
-			main: '#121212',
+			main: '#091F2C',
 			light: '#161616',
 			dark: '#007bff',
 			contrastText: '#fff'

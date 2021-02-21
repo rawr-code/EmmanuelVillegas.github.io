@@ -24,27 +24,24 @@ const HeroBg = styled.div`
 	width: 100%;
 	z-index: 0;
 
-	background-image: url(images/intro-bg.jpg);
+	background-image: url(https://i.imgur.com/pva94oR.jpg);
+	background-image: url(https://cdn3.f-cdn.com//files/download/29271552/bb628f.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	/* background-attachment: fixed; */
 	background-position: center -100px;
+	background-position: center;
 
 	transition: background-image 300ms ease-in 200ms;
 `;
 
-const HeroContentWrapper = styled.div`
+const HeroContent = styled.div`
 	position: relative;
 	z-index: 2;
 	display: flex;
 	padding: 4.5rem 0;
 	overflow: hidden;
 	min-height: 100vh;
-`;
-
-const HeroContent = styled.div`
-	margin-top: auto;
-	margin-bottom: auto;
 `;
 
 interface Props {
@@ -56,9 +53,7 @@ const Hero: React.FC<Props> = ({ children }) => {
 		<HeroWrap>
 			<HeroMask />
 			<HeroBg />
-			<HeroContentWrapper>
-				<HeroContent>{children}</HeroContent>
-			</HeroContentWrapper>
+			<HeroContent>{children}</HeroContent>
 		</HeroWrap>
 	);
 };
